@@ -29,7 +29,3 @@ jobs:
     steps:
       - name: Deploying this app on the machine
         run: echo "Deploying the application"
-
-
-        
-  deploy:
