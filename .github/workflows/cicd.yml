@@ -1,0 +1,34 @@
+name: CICD Learning
+
+on: workflow_dispatch:
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Clone the code
+        run: echo "Closing the code"
+  build:
+    needs: [code]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build using the docker
+        run: echo "Building using the docker"
+        
+  test:
+    needs: [code]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running test cases
+        run: echo "testing the case"
+  
+  deploy:
+    needs: [build,test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying this app on the machine
+        run: echo "Deploying the application"
+
+
+        
+  deploy:
